@@ -1,0 +1,89 @@
+{
+    "author": "machineboy",
+    "dependencies": {},
+    "keywords": [],
+    "name": "diago",
+    "pebble": {
+        "capabilities": [
+            "location",
+            "configurable",
+            "health"
+        ],
+        "displayName": "Diago",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "KEY_API": 5,
+            "KEY_CONDITIONS": 1,
+            "KEY_TEMPERATURE": 0,
+            "KEY_WEEK": 4,
+            "KEY_WIND": 2,
+            "KEY_WINDDIRECTION": 3
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/icon.png",
+                    "menuIcon": true,
+                    "name": "IMAGE_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/arrow_N.png",
+                    "name": "IMAGE_ARROW_N",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/sliced.png",
+                    "name": "IMAGE_SLICED",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/fade.png",
+                    "name": "IMAGE_FADE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/back.png",
+                    "name": "IMAGE_BLUEBACK",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "characterRegex": "[0-9:, ]",
+                    "file": "fonts/AldotheApache.ttf",
+                    "name": "FONT_ALDO_64",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "compatibility": "2.7",
+                    "file": "fonts/perfect-dos-vga.ttf",
+                    "name": "FONT_PERFECT_DOS_48",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "compatibility": "2.7",
+                    "file": "fonts/perfect-dos-vga.ttf",
+                    "name": "FONT_PERFECT_DOS_20",
+                    "targetPlatforms": null,
+                    "type": "font"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "9e4b50fe-60ea-4490-8e91-e7023261a039",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
