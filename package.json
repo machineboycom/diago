@@ -1,0 +1,75 @@
+{
+    "author": "machineboy",
+    "dependencies": {},
+    "keywords": [],
+    "name": "diago",
+    "pebble": {
+        "capabilities": [
+            "location",
+            "configurable",
+            "health"
+        ],
+        "displayName": "Diago",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "API": 5,
+            "FAHRENHEIT": 7,
+            "KEY_CONDITIONS": 1,
+            "KEY_TEMPERATURE": 0,
+            "KEY_WEEK": 4,
+            "KEY_WIND": 2,
+            "KEY_WINDDIRECTION": 3,
+            "WEEKS": 6
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/sliced.png",
+                    "name": "IMAGE_SLICED",
+                    "targetPlatforms": [
+                        "basalt"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/icon.png",
+                    "menuIcon": true,
+                    "name": "IMAGE_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "characterRegex": "[0-9:, ]",
+                    "file": "fonts/AldotheApache.ttf",
+                    "name": "FONT_ALDO_64",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "compatibility": "2.7",
+                    "file": "fonts/perfect-dos-vga.ttf",
+                    "name": "FONT_PERFECT_DOS_48",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "compatibility": "2.7",
+                    "file": "fonts/perfect-dos-vga.ttf",
+                    "name": "FONT_PERFECT_DOS_20",
+                    "targetPlatforms": null,
+                    "type": "font"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "48f5e1c8-2396-425d-992a-b65358739a31",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
