@@ -119,7 +119,7 @@ static void update_time() {
 
 // WEATHER-STUFF
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
-  
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "STARTER MOTTAK");
   // Store incoming information
   static char temperature_buffer[8];
   static char conditions_buffer[32];
@@ -132,6 +132,17 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   Tuple *conditions_tuple = dict_find(iterator, KEY_CONDITIONS);
   Tuple *wind_tuple = dict_find(iterator, KEY_WIND);
   Tuple *winddirection_tuple = dict_find(iterator, KEY_WINDDIRECTION);
+  Tuple *weeks_t = dict_find(iterator, MESSAGE_KEY_WEEKS);
+  if(weeks_t) {
+    weekNumbers = weeks_t->value->int32 == 1;
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Weeks are %d",weekNumbers);
+    update_time();
+  }
+  Tuple *fahrenheit_t = dict_find(iterator, MESSAGE_KEY_FAHRENHEIT);
+  if(fahrenheit_t) {
+    showFahrenheit = fahrenheit_t->value->int32 == 1;
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Fahrenheit is %d",showFahrenheit);
+  }
   
   //static char winddir[4] = "-";
   int windint = (int)winddirection_tuple->value->int32;
@@ -141,7 +152,7 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   snprintf(winddir, 8,"%s",cardinals[(windint % 360) / 45]);
   //char test[] = cardinals[2];
   
-  APP_LOG(APP_LOG_LEVEL_DEBUG, "WIND DIRECTION:%s", winddir);
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "WIND DIRECTION IS:%s", winddir);
   
   // If all data is available, use it
   if(temp_tuple && conditions_tuple && wind_tuple) {
@@ -162,19 +173,9 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   }
   
   //GET KEYS FROM SETTINGS
-  APP_LOG(APP_LOG_LEVEL_INFO, "Message received!");
+  APP_LOG(APP_LOG_LEVEL_INFO, "Weather Message received!");
   
-  Tuple *weeks_t = dict_find(iterator, MESSAGE_KEY_WEEKS);
-  if(weeks_t) {
-    weekNumbers = weeks_t->value->int32 == 1;
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "Weeks are %d",weekNumbers);
-    update_time();
-  }
-  Tuple *fahrenheit_t = dict_find(iterator, MESSAGE_KEY_FAHRENHEIT);
-  if(fahrenheit_t) {
-    showFahrenheit = fahrenheit_t->value->int32 == 1;
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "Fahrenheit is %d",showFahrenheit);
-  }
+  
   
 }
 
