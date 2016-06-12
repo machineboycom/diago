@@ -1,4 +1,7 @@
 ![alt tag](http://machineboy.com/html/header.png)
 
 # diago
-Clean and simple Pebble Time watch face with date, battery, week number, weather, wind and steps
+
+An easy to read, clean Pebble Time watch face.
+
+Features date, optional week number, weather from openweathermap.org (requires free API key), wind direction and step count.
